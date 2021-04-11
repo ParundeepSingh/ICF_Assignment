@@ -1,9 +1,12 @@
 package com.icfassignment.repository;
 
-import java.util.List;
+import java.util.Optional;
 
-import com.icfassignment.dto.EmployeeDTO;
+import org.springframework.data.repository.CrudRepository;
 
-public interface EmployeeRepository {
-	public List<EmployeeDTO> getAllEmployees();
+import com.icfassignment.entity.Employee;
+
+public interface EmployeeRepository extends CrudRepository<Employee, Integer>{
+	
+	public Optional<Employee> findByEmpId(String empID);
 }

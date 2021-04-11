@@ -25,6 +25,12 @@ public class EmployeeDetailsApplication implements CommandLineRunner{
 //		EmployeeController empController = new EmployeeController();
 		String str = empController.getAllEmployeeDetails();
 		System.out.println(str);
+		
+		str = empController.getEmployeeBasedOnId(4);
+		System.out.println(str);
+		
+		str = empController.getEmployeeBasedOnEmpId("EMP2");
+		System.out.println(str);
 	}
 	
 	

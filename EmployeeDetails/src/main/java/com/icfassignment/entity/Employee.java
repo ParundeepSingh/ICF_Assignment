@@ -1,12 +1,23 @@
-package com.icfassignment.dto;
+package com.icfassignment.entity;
 
 import java.time.LocalDate;
 
-public class EmployeeDTO {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Employee {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private String firstName;
 	private String lastName;
+	
+	@Column(name="employment_id")
 	private String empId;
 	private LocalDate startDate;
 	private String designation;
@@ -18,8 +29,90 @@ public class EmployeeDTO {
 	private String bloodGroup;
 	private String gender;
 	private String address;
-	
-	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getEmpId() {
+		return empId;
+	}
+	public void setEmpId(String empId) {
+		this.empId = empId;
+	}
+	public LocalDate getStartDate() {
+		return startDate;
+	}
+	public void setStartDate(LocalDate startDate) {
+		this.startDate = startDate;
+	}
+	public String getDesignation() {
+		return designation;
+	}
+	public void setDesignation(String designation) {
+		this.designation = designation;
+	}
+	public String getDepartment() {
+		return department;
+	}
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+	public LocalDate getEndDate() {
+		return endDate;
+	}
+	public void setEndDate(LocalDate endDate) {
+		this.endDate = endDate;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public LocalDate getDob() {
+		return dob;
+	}
+	public void setDob(LocalDate dob) {
+		this.dob = dob;
+	}
+	public String getReportingManager() {
+		return reportingManager;
+	}
+	public void setReportingManager(String reportingManager) {
+		this.reportingManager = reportingManager;
+	}
+	public String getBloodGroup() {
+		return bloodGroup;
+	}
+	public void setBloodGroup(String bloodGroup) {
+		this.bloodGroup = bloodGroup;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -48,7 +141,7 @@ public class EmployeeDTO {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		EmployeeDTO other = (EmployeeDTO) obj;
+		Employee other = (Employee) obj;
 		if (address == null) {
 			if (other.address != null)
 				return false;
@@ -120,96 +213,14 @@ public class EmployeeDTO {
 	}
 	@Override
 	public String toString() {
-		return "EmployeeDTO [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", empId=" + empId
+		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", empId=" + empId
 				+ ", startDate=" + startDate + ", designation=" + designation + ", department=" + department
 				+ ", endDate=" + endDate + ", status=" + status + ", dob=" + dob + ", reportingManager="
 				+ reportingManager + ", bloodGroup=" + bloodGroup + ", gender=" + gender + ", address=" + address + "]";
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getFirstName() {
-		return firstName;
-	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-	public String getEmpId() {
-		return empId;
-	}
-	public void setEmpId(String empId) {
-		this.empId = empId;
-	}
-	public LocalDate getStartDate() {
-		return startDate;
-	}
-	public void setStartDate(LocalDate startDate) {
-		this.startDate = startDate;
-	}
-	public String getDesignation() {
-		return designation;
-	}
-	public void setDesignation(String designation) {
-		this.designation = designation;
-	}
-	public LocalDate getEndDate() {
-		return endDate;
-	}
-	public void setEndDate(LocalDate endDate) {
-		this.endDate = endDate;
-	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
-	public LocalDate getDob() {
-		return dob;
-	}
-	public void setDob(LocalDate dob) {
-		this.dob = dob;
-	}
-	public String getReportingManager() {
-		return reportingManager;
-	}
-	public void setReportingManager(String reportingManager) {
-		this.reportingManager = reportingManager;
-	}
-	public String getBloodGroup() {
-		return bloodGroup;
-	}
-	public void setBloodGroup(String bloodGroup) {
-		this.bloodGroup = bloodGroup;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getDepartment() {
-		return department;
-	}
-
-	public void setDepartment(String department) {
-		this.department = department;
-	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
+	
+	
+	
+	
 	
 }

@@ -6,5 +6,9 @@ import com.icfassignment.dto.EmployeeDTO;
 import com.icfassignment.employeeException.EmployeeDetailsException;
 
 public interface EmployeeService {
-	List<EmployeeDTO> getAllEmployees() throws EmployeeDetailsException;
+	public List<EmployeeDTO> findAll() throws EmployeeDetailsException;
+	
+	public EmployeeDTO getEmployee(Integer id) throws EmployeeDetailsException;
+	
+	public EmployeeDTO findByEmpId(String empId) throws EmployeeDetailsException;
 }

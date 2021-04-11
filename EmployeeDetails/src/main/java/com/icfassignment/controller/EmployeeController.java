@@ -17,7 +17,7 @@ public class EmployeeController {
 	
 	public String getAllEmployeeDetails() throws EmployeeDetailsException {
 //		EmployeeService empService = new EmployeeServiceImpl();
-		List<EmployeeDTO> list = empService.getAllEmployees();
+		List<EmployeeDTO> list = empService.findAll();
 		
 		for(int i = 0 ; i < list.size(); i++) {
 			System.out.println(list.get(i));
@@ -25,5 +25,17 @@ public class EmployeeController {
 		return new String("Details Fetched Successfully");
 	}
 	
+	
+	public String getEmployeeBasedOnId(Integer id) throws EmployeeDetailsException {
+		EmployeeDTO emp = empService.getEmployee(id);
+		System.out.println(emp);
+		return new String("Employee(Based on ID) Details Fetched Successfully");
+	}
+	
+	public String getEmployeeBasedOnEmpId(String empId) throws EmployeeDetailsException {
+		EmployeeDTO emp = empService.findByEmpId(empId);
+		System.out.println(emp);
+		return new String("Employee(Based on Employee ID) Details Fetched Successfully");
+	}
 	
 }
